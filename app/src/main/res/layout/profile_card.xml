@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/ninety"
+    android:layout_margin="@dimen/five"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/profile_image"
+        android:layout_width="@dimen/one_hundred"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:layout_marginRight="@dimen/twenty"
+        />
+
+
+        <TextView
+            android:id="@+id/profile_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Glorious Fury"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_toRightOf="@id/profile_image"
+            android:layout_marginTop="@dimen/ten"
+            android:textColor="@color/blue"
+            />
+
+        <TextView
+            android:id="@+id/language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/language"
+            android:textSize="@dimen/fifteen_text_size"
+            android:layout_toRightOf="@id/profile_image"
+            android:layout_below="@id/profile_name"
+            android:layout_marginTop="@dimen/five"
+            />
+
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/location"
+            android:textSize="@dimen/fifteen_text_size"
+            android:layout_toRightOf="@id/profile_image"
+            android:layout_below="@id/language"
+            android:layout_marginTop="@dimen/five"
+            />
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+</android.support.v7.widget.CardView>

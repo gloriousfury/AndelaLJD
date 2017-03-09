@@ -1,0 +1,57 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="five">5dp</dimen>
+    <dimen name="ten">10dp</dimen>
+    <dimen name="eight">8dp</dimen>
+    <dimen name="fifteen">15dp</dimen>
+    <dimen name="twenty">20dp</dimen>
+
+    <dimen name="twenty_five">25dp</dimen>
+
+    <dimen name="thirty">30dp</dimen>
+
+    <dimen name="thirty_five">35dp</dimen>
+    <dimen name="fourty">40dp</dimen>
+    <dimen name="fourty_five">45dp</dimen>
+
+    <dimen name="fifty">50dp</dimen>
+
+    <dimen name="sixty">60dp</dimen>
+
+    <dimen name="seventy">70dp</dimen>
+
+    <dimen name="eighty">80dp</dimen>
+    <dimen name="ninety">90dp</dimen>
+
+    <dimen name="one_hundred">100dp</dimen>
+    <dimen name="one_twenty_five">125dp</dimen>
+    <dimen name="one_forty">140dp</dimen>
+    <dimen name="one_fifty">150dp</dimen>
+
+    <dimen name="one_seventy_five">175dp</dimen>
+    <dimen name="two_hundred">200dp</dimen>
+    <dimen name="two_hundred_fifty">250dp</dimen>
+    <dimen name="two_fifty">250dp</dimen>
+    <dimen name="two_hundred_seventy">270dp</dimen>
+    <dimen name="three_hundred">300dp</dimen>
+    <dimen name="three_twenty_five">325dp</dimen>
+    <dimen name="three_fifty">350dp</dimen>
+    <dimen name="three_seventy_five">375dp</dimen>
+    <dimen name="four_hundred">400dp</dimen>
+    <dimen name="four_twenty_five">425dp</dimen>
+    <dimen name="four_fifty">450dp</dimen>
+
+
+
+    <dimen name="ten_text_size">10sp</dimen>
+    <dimen name="fifteen_text_size">15sp</dimen>
+    <dimen name="twenty_text_size">20sp</dimen>
+    <dimen name="design_fab_image_size" tools:override="true">20dp</dimen>
+
+
+
+
+</resources>

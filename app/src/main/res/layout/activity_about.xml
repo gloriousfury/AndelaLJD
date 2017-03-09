@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+
+
+
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/twenty"
+        android:layout_marginRight="@dimen/twenty"
+        android:layout_centerInParent="true"
+
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+           >
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="@string/about_title"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginTop="@dimen/ten"
+                android:layout_marginLeft="@dimen/ten"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="@string/about_text"
+                android:textSize="17sp"
+                android:layout_marginTop="@dimen/ten"
+                android:layout_below="@+id/title"
+                android:layout_marginRight="@dimen/ten"
+                android:layout_marginLeft="@dimen/ten"
+                android:layout_marginBottom="@dimen/ten"
+
+                />
+
+            <ImageView
+                android:id="@+id/closeActivity"
+                android:layout_width="@dimen/twenty_five"
+                android:layout_height="@dimen/twenty_five"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/five"
+                android:src="@drawable/ic_close_black_24dp"
+
+                />
+
+
+
+
+        </RelativeLayout>
+
+       </android.support.design.widget.CoordinatorLayout>
+
+
+
+
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">LJV</string>
+    <string name="action_settings">Settings</string>
+    <string name="location">Lagos</string>
+    <string name="language">Java Developer</string>
+
+    <string name="sample_name">John Doe</string>
+    <string name="sample_no">10</string>
+
+    <string name="sample_at">\@johndoe</string>
+    <string name="about_title">About</string>
+    <string name="about_text">Lagos Java Developers(LJV) is an app for the android learning community initiated by Andela, it simply draws on an available list from Github api to populate it views.\n\n When a user is clicked on, LJV provides info about chosen github user, you can sort the list by number of repositories or followers too,\n\n You can also listen to github.audio from the app, Github.audio is a fun tool that plays music based on github events\n\n App Developer: Oloriade Taiye</string>
+</resources>
