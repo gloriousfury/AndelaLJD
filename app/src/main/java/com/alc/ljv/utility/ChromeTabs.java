@@ -30,7 +30,7 @@ public class ChromeTabs {
 //        intentBuilder.setStartAnimations(this, R.anim.slide_in_right, R.anim.slide_out_left);
         intentBuilder.setExitAnimations(context, android.R.anim.slide_in_left,
                 android.R.anim.slide_out_right);
-        
+
 // build custom tabs intent
         CustomTabsIntent customTabsIntent = intentBuilder.build();
 

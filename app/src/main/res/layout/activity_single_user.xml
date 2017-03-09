@@ -302,8 +302,9 @@
                             android:layout_width="@dimen/twenty"
                             android:layout_height="@dimen/twenty"
                             android:src="@drawable/ic_link_black_24dp"
-                            android:layout_marginLeft="@dimen/five"
+                            android:layout_marginRight="@dimen/five"
                             android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/dev_url"
                             />
 
                         <TextView
@@ -315,7 +316,7 @@
                             android:layout_centerInParent="true"
                             android:textAlignment="center"
                             android:layout_marginRight="2dp"
-                            android:layout_toRightOf="@id/link_icon"
+
 
 
                             />
