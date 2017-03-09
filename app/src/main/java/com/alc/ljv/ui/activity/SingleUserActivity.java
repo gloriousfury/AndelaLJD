@@ -244,27 +244,4 @@ public class SingleUserActivity extends AppCompatActivity implements View.OnClic
 
     }
 
-    public void gotoGithubProfile(String gitURL) {
-        Uri uri = Uri.parse(gitURL);
-        CustomTabsIntent.Builder intentBuilder = new CustomTabsIntent.Builder();
-        Intent intent = new Intent(this, MainActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 1, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-// Begin customizing
-// set toolbar colors
-        intentBuilder.setToolbarColor(ContextCompat.getColor(this, R.color.colorPrimary));
-        intentBuilder.setSecondaryToolbarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
-
-// set start and exit animations
-//        intentBuilder.setStartAnimations(this, R.anim.slide_in_right, R.anim.slide_out_left);
-        intentBuilder.setExitAnimations(this, android.R.anim.slide_in_left,
-                android.R.anim.slide_out_right);
-//        intentBuilder.addMenuItem("Save link", pendingIntent);
-// build custom tabs intent
-        CustomTabsIntent customTabsIntent = intentBuilder.build();
-
-// launch the url
-        customTabsIntent.launchUrl(SingleUserActivity.this, uri);
-
-    }
 }

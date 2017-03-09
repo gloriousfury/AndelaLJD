@@ -26,9 +26,9 @@
             android:layout_height="wrap_content"
             android:text="Glorious Fury"
             android:textStyle="bold"
-            android:textSize="15sp"
+            android:textSize="17sp"
             android:layout_toRightOf="@id/profile_image"
-            android:layout_marginTop="@dimen/ten"
+            android:layout_marginTop="@dimen/five"
             android:textColor="@color/blue"
             />
 

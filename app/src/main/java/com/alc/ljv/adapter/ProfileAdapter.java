@@ -7,6 +7,7 @@ package com.alc.ljv.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +25,7 @@ import java.util.List;
 public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ViewHolder> {
     private Context context;
     private List<ProfileModel> profile_list;
+
 
 
     public ProfileAdapter(Context context, List<ProfileModel> ProfileList) {
@@ -70,7 +72,9 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.profile_name.setText(profile_list.get(position).getLogin());
+        String at = Html.escapeHtml("@");
+
+        holder.profile_name.setText(at + profile_list.get(position).getLogin());
         Picasso.with(context).load(profile_list.get(position).getAvatarUrl()).into(holder.profile_image);
 
 

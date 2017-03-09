@@ -1,41 +1,24 @@
 package com.alc.ljv.ui.activity;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.Resources;
-import android.graphics.Rect;
-import android.net.Uri;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.support.customtabs.CustomTabsIntent;
 import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.text.Html;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.alc.ljv.R;
 import com.alc.ljv.adapter.ProfileAdapter;
-import com.alc.ljv.adapter.ProfileAdapterGrid;
-import com.alc.ljv.constants.IntentActionConstants;
 import com.alc.ljv.constants.ServiceActionConstants;
 import com.alc.ljv.model.DataModel;
 import com.alc.ljv.model.ProfileModel;
@@ -49,11 +32,6 @@ import org.parceler.Parcels;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static android.drm.DrmInfoRequest.ACCOUNT_ID;
-import static com.alc.ljv.R.id.coordinatorLayout;
-import static com.alc.ljv.R.id.txt_javadevcount;
-import static java.security.AccessController.getContext;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -73,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     CoordinatorLayout coordinatorLayout;
     RelativeLayout relativeLayout;
     boolean isGridView = false;
+
 
     List<ProfileModel> FeedList = new ArrayList<ProfileModel>();
     RecyclerView recyclerView;
