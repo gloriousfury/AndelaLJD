@@ -156,10 +156,10 @@ public class SingleUserActivity extends AppCompatActivity implements View.OnClic
     //Try and do best practice here
     private void loadDevData(String getName, int getGistNo, int getRepoNo, int getFollowersNo, int getFollowingNo) {
         fullName.setText(getName);
-        publicGist.setText("" + getGistNo);
-        publicRepo.setText("" + getRepoNo);
-        followers.setText("" + getFollowersNo);
-        following.setText("" + getFollowingNo);
+        publicGist.setText(String.valueOf( getGistNo));
+        publicRepo.setText( String.valueOf( getRepoNo));
+        followers.setText(String.valueOf( getFollowersNo));
+        following.setText( String.valueOf(getFollowingNo));
 
 
     }

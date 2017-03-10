@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     // Pagination: display 20 users on each page, so totalpageno will be equal to (totalno divided by 20) +1(for
                     // leftovers)
                     totalPageNo = (response.getTotalCount() / 20) + 1;
-                    devCount.setText(response.getTotalCount() + "");
+                    devCount.setText(String.valueOf(response.getTotalCount()));
                     FeedList = response.getItems();
 
 
