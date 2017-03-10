@@ -3,6 +3,8 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="two">2dp</dimen>
     <dimen name="five">5dp</dimen>
     <dimen name="ten">10dp</dimen>
     <dimen name="eight">8dp</dimen>
@@ -48,7 +50,10 @@
 
     <dimen name="ten_text_size">10sp</dimen>
     <dimen name="fifteen_text_size">15sp</dimen>
+    <dimen name="seventeen_text_size">17sp</dimen>
     <dimen name="twenty_text_size">20sp</dimen>
+    <dimen name="twentytwo_text_size">22sp</dimen>
+    <dimen name="thirty_text_size">30sp</dimen>
     <dimen name="design_fab_image_size" tools:override="true">20dp</dimen>
 
 

@@ -27,7 +27,7 @@ public class ChromeTabs {
         intentBuilder.setSecondaryToolbarColor(ContextCompat.getColor(context, R.color.colorPrimaryDark));
 
 // set start and exit animations
-//        intentBuilder.setStartAnimations(this, R.anim.slide_in_right, R.anim.slide_out_left);
+//        intentBuilder.setStartAnimations(context, R.anim.slide_up, R.anim.slide_down);
         intentBuilder.setExitAnimations(context, android.R.anim.slide_in_left,
                 android.R.anim.slide_out_right);
 

@@ -34,7 +34,7 @@
                 android:textColor="@color/colorPrimaryDark"
                 android:text="@string/about_title"
                 android:textStyle="bold"
-                android:textSize="22sp"
+                android:textSize="@dimen/twentytwo_text_size"
                 android:layout_marginTop="@dimen/ten"
                 android:layout_marginLeft="@dimen/ten"
                 />
@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorPrimaryDark"
                 android:text="@string/about_text"
-                android:textSize="17sp"
+                android:textSize="@dimen/seventeen_text_size"
                 android:layout_marginTop="@dimen/ten"
                 android:layout_below="@+id/title"
                 android:layout_marginRight="@dimen/ten"
