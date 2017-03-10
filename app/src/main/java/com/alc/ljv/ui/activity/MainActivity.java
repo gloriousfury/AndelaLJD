@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Andela LJV");
+        toolbar.setTitle("Andela LJD");
         setSupportActionBar(toolbar);
 
         //initialization of views
@@ -156,30 +156,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
 
-        if (event.getEventType() == AppMainServiceEvent.GITHUB_SINGLE_USER_RESPONSE) {
-            if (i != null) {
 
-                DataModel response = Parcels.unwrap(i.getParcelableExtra(AppMainServiceEvent.RESPONSE_DATA));
-                FeedList = response.getItems();
-
-
-                if (response.getIncompleteResults().toString().contentEquals("false")) {
-                    FeedList = response.getItems();
-
-                    ProfileAdapter adapter = new ProfileAdapter(this, FeedList);
-                    recyclerView.setAdapter(adapter);
-                    updateUi(UI_STATE_SUCCES);
-
-                } else {
-                    updateUi(UI_STATE_ERROR);
-                }
-
-            } else {
-                updateUi(UI_STATE_ERROR);
-
-            }
-
-        }
 
     }
 
@@ -294,7 +271,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         } else if (id == R.id.action_githubAudio) {
             ChromeTabs chromeTabs = new ChromeTabs();
-            chromeTabs.gotoGithubProfile(this,"https://github.audio");
+            chromeTabs.gotoGithubProfile(this, "https://github.audio");
         } else if (id == R.id.sortbyFollowers) {
             sortType = "followers";
             GetLagosJavaDevs(currentPageNo, sortType);

@@ -135,7 +135,6 @@ public class AppMainService extends BaseService {
     //                showErrorMessage();
                 t.getMessage();
                 DataModel data = null;
-
                 responseIntent.putExtra(AppMainServiceEvent.RESPONSE_DATA, Parcels.wrap(data));
 
 
@@ -163,7 +162,7 @@ public class AppMainService extends BaseService {
                     event.setEventType(AppMainServiceEvent.GITHUB_SINGLE_USER_RESPONSE);
                     EventBus.getDefault().post(event);
 
-                    Log.d("MainActivity", "posts loaded from API");
+                    Log.d("SingleUserActivity", "posts loaded from API");
                 } else {
                     int statusCode = response.code();
                     // handle request errors depending on status code
@@ -173,7 +172,12 @@ public class AppMainService extends BaseService {
             @Override
             public void onFailure(Call<SingleUserModel> call, Throwable t) {
 //                showErrorMessage();
-                Log.d("MainActivity", "error loading from API");
+                Log.d("SingleUserActivity", t.toString());
+                SingleUserModel data = null;
+                responseIntent.putExtra(AppMainServiceEvent.RESPONSE_DATA, Parcels.wrap(data));
+                event.setEventType(AppMainServiceEvent.GITHUB_USERS_RESPONSE);
+                EventBus.getDefault().post(event);
+
 
             }
         });

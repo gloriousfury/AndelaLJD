@@ -4,8 +4,10 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.customtabs.CustomTabsIntent;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
@@ -84,7 +86,6 @@ public class SingleUserActivity extends AppCompatActivity implements View.OnClic
         shareButton.setOnClickListener(this);
 
 
-
         //data passed through intent extra
         loadPassedData();
         //data gotten from api endpoint
@@ -107,11 +108,12 @@ public class SingleUserActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void GetUserData() {
+        progressBar.setVisibility(View.VISIBLE);
         Intent i = new Intent(this, AppMainService.class);
         i.putExtra(ServiceActionConstants.SERVICE_ACTION, ServiceActionConstants.SERVICE_ACTION_GET_JAVA_DEV_DETAILS);
         i.putExtra(DEV_NAME, developerName);
         startService(i);
-        progressBar.setVisibility(View.VISIBLE);
+
 
 
     }
@@ -131,17 +133,6 @@ public class SingleUserActivity extends AppCompatActivity implements View.OnClic
                 getRepoNo = response.getPublicRepos();
                 getFollowersNo = response.getFollowers();
                 getFollowingNo = response.getFollowing();
-
-
-
-//                if (response != null) {
-//                    getName = response.getName();
-//                    getGistNo = response.getPublicRepos();
-//                    getRepoNo = response.getPublicRepos();
-//                    getFollowersNo = response.getFollowers();
-//                    getFollowingNo = response.getFollowing();
-//                    getUrl = response.getUrl();
-
 
                 loadDevData(getName, getGistNo, getRepoNo, getFollowersNo, getFollowingNo);
                 updateUi(UI_STATE_SUCCES);
@@ -171,7 +162,6 @@ public class SingleUserActivity extends AppCompatActivity implements View.OnClic
         following.setText("" + getFollowingNo);
 
 
-
     }
 
 
@@ -183,7 +173,14 @@ public class SingleUserActivity extends AppCompatActivity implements View.OnClic
 
         } else if (state == UI_STATE_ERROR) {
 
-            progressBar.setVisibility(View.INVISIBLE);
+//            Toast.makeText(this, "No internet connection", Toast.LENGTH_LONG).show();
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    onBackPressed();
+                }
+            }, 3000);
 
 
         }
@@ -221,7 +218,7 @@ public class SingleUserActivity extends AppCompatActivity implements View.OnClic
             case R.id.github_url:
 
                 ChromeTabs chromeTabs = new ChromeTabs();
-                chromeTabs.gotoGithubProfile(this,developerUrl);
+                chromeTabs.gotoGithubProfile(this, developerUrl);
 //                gotoGithubProfile(developerUrl);
 
                 break;
