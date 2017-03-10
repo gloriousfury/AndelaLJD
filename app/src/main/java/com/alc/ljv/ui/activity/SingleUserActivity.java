@@ -180,7 +180,7 @@ public class SingleUserActivity extends AppCompatActivity implements View.OnClic
                 public void run() {
                     onBackPressed();
                 }
-            }, 3000);
+            }, 2000);
 
 
         }
