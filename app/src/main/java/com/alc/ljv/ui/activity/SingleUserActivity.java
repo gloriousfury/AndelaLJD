@@ -231,10 +231,10 @@ public class SingleUserActivity extends AppCompatActivity implements View.OnClic
 
     private void shareMessage() {
         String shareBody = "Check out this awesome developer " + devName.getText()
-                + " here " + developerUrl;
+                + " here: " + developerUrl;
         Intent sharingIntent = new Intent(Intent.ACTION_SEND);
         sharingIntent.setType("text/plain");
-        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Andela ALC");
+        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Andela LJD");
         sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
         startActivity(Intent.createChooser(sharingIntent, "Share using"));
 

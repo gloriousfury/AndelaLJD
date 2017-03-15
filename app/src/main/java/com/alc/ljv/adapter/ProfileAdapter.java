@@ -7,7 +7,6 @@ package com.alc.ljv.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,10 +22,11 @@ import java.util.List;
 
 
 public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ViewHolder> {
-    private Context context;
+    Context context;
     private List<ProfileModel> profile_list;
-
-
+    String DEV_NAME = "dev_name";
+    String HTML_URL = "html_url";
+    String IMAGE_URL = "image_url";
 
     public ProfileAdapter(Context context, List<ProfileModel> ProfileList) {
         this.context = context;
@@ -38,9 +38,6 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ViewHold
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView profile_name;
         ImageView profile_image;
-        private String DEV_NAME = "dev_name";
-        private String HTML_URL = "html_url";
-        private String IMAGE_URL = "image_url";
 
         public ViewHolder(View view) {
             super(view);
@@ -72,9 +69,7 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        String at = Html.escapeHtml("@");
-
-        holder.profile_name.setText(at + profile_list.get(position).getLogin());
+        holder.profile_name.setText(profile_list.get(position).getLogin());
         Picasso.with(context).load(profile_list.get(position).getAvatarUrl()).into(holder.profile_image);
 
 
