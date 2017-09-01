@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.alc.ljv.ui.activity.FilterActivity"
+
+    >
+
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="City"
+            android:layout_margin="@dimen/twenty"
+
+            />
+
+        <Spinner
+            android:id="@+id/city_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fifty"
+            android:layout_marginLeft="@dimen/twenty"
+            android:layout_marginRight="@dimen/twenty"
+            android:entries="@array/city_array"
+            android:background="@drawable/urllinkbackground"
+
+            ></Spinner>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Language"
+            android:layout_margin="@dimen/twenty"
+
+            />
+
+        <Spinner
+            android:id="@+id/lang_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fifty"
+            android:layout_marginLeft="@dimen/twenty"
+            android:layout_marginRight="@dimen/twenty"
+            android:entries="@array/lang_array"
+
+            ></Spinner>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sort by :"
+            android:layout_margin="@dimen/twenty"
+
+            />
+
+        <Spinner
+            android:id="@+id/sort_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fifty"
+            android:layout_marginLeft="@dimen/twenty"
+            android:layout_marginRight="@dimen/twenty"
+            android:entries="@array/sort_array"
+
+            ></Spinner>
+
+
+        <Button
+            android:id="@+id/btn_applyfilter"
+            android:onClick="applyFilter"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fifty"
+            android:layout_marginRight="@dimen/twenty"
+            android:layout_marginLeft="@dimen/twenty"
+            android:layout_marginTop="@dimen/twenty"
+            android:layout_marginBottom="@dimen/ten"
+            android:text="Apply"
+
+            />
+
+
+
+    </LinearLayout>
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>

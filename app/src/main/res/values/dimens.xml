@@ -47,7 +47,6 @@
     <dimen name="four_fifty">450dp</dimen>
 
 
-
     <dimen name="ten_text_size">10sp</dimen>
     <dimen name="fifteen_text_size">15sp</dimen>
     <dimen name="seventeen_text_size">17sp</dimen>
@@ -55,8 +54,6 @@
     <dimen name="twentytwo_text_size">22sp</dimen>
     <dimen name="thirty_text_size">30sp</dimen>
     <dimen name="design_fab_image_size" tools:override="true">20dp</dimen>
-
-
 
 
 </resources>

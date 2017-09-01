@@ -26,6 +26,7 @@ import com.alc.ljv.model.SingleUserModel;
 import com.alc.ljv.service.AppMainService;
 import com.alc.ljv.service.AppMainServiceEvent;
 import com.alc.ljv.utility.ChromeTabs;
+import com.alc.ljv.utility.UtilsClass;
 import com.squareup.picasso.Picasso;
 
 import org.greenrobot.eventbus.EventBus;
@@ -40,7 +41,7 @@ public class SingleUserActivity extends AppCompatActivity implements View.OnClic
 
     private static final int UI_STATE_ERROR = 0;
     private static final int UI_STATE_SUCCES = 1;
-    TextView fullName, devName, publicRepo, publicGist, followers, following, dev_url;
+    TextView fullName, devName, publicRepo, publicGist, followers, following, dev_url,location;
     ImageView devImage, closeActivity;
     String getName, developerName, developerUrl;
     int getGistNo, getFollowersNo, getFollowingNo, getRepoNo;
@@ -69,6 +70,8 @@ public class SingleUserActivity extends AppCompatActivity implements View.OnClic
         publicGist = (TextView) findViewById(R.id.pubic_gist_no);
         followers = (TextView) findViewById(R.id.followers_no);
         following = (TextView) findViewById(R.id.following_no);
+        location = (TextView) findViewById(R.id.location);
+
         dev_url = (TextView) findViewById(R.id.dev_url);
 
 
@@ -155,11 +158,15 @@ public class SingleUserActivity extends AppCompatActivity implements View.OnClic
 
     //Try and do best practice here
     private void loadDevData(String getName, int getGistNo, int getRepoNo, int getFollowersNo, int getFollowingNo) {
+        UtilsClass utils = new UtilsClass(this);
+        String location_text = utils.getLocation();
+
         fullName.setText(getName);
         publicGist.setText(String.valueOf( getGistNo));
         publicRepo.setText( String.valueOf( getRepoNo));
         followers.setText(String.valueOf( getFollowersNo));
         following.setText( String.valueOf(getFollowingNo));
+        location.setText(location_text);
 
 
     }

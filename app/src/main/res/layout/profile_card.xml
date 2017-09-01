@@ -43,7 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="\@gloriousfury"
+                android:text="@string/sample_at"
                 android:textColor="@color/blue"
                 android:textSize="14sp"
                 android:textStyle="bold"
@@ -54,13 +54,11 @@
             <ImageView
                 android:layout_width="@dimen/ten"
                 android:layout_height="@dimen/ten"
-
                 android:layout_marginRight="@dimen/five"
                 android:layout_marginTop="13dp"
                 android:layout_toLeftOf="@id/profile_name"
                 android:layout_centerInParent="true"
                 android:src="@drawable/img_java"
-
 
                 />
 

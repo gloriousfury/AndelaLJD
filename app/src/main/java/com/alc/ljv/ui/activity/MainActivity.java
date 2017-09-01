@@ -29,6 +29,8 @@ import com.alc.ljv.model.ProfileModel;
 import com.alc.ljv.service.AppMainService;
 import com.alc.ljv.service.AppMainServiceEvent;
 import com.alc.ljv.utility.ChromeTabs;
+import com.alc.ljv.utility.UtilsClass;
+import com.alc.ljv.utility.ViewDialog;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -101,6 +103,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         GetLagosJavaDevs(currentPageNo, sortType);
 
 
+
+
     }
 
     private void GetLagosJavaDevs(int CurrentPageNo, String sortType) {
@@ -155,12 +159,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 }
 
-            } else {
-                updateUi(UI_STATE_ERROR);
-
             }
 
-        }
+        }else if (event.getEventType() == AppMainServiceEvent.FILTER_PARAMETERS_CHANGED) {
+            if (i != null) {
+                //Get dat
+
+                GetLagosJavaDevs(currentPageNo, sortType);
+
+
+                } else {
+                    updateUi(UI_STATE_ERROR);
+
+
+                }
+
+            }
+//            else {
+//                updateUi(UI_STATE_ERROR);
+//
+//            }
+
+
 
 
     }
@@ -278,14 +298,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (id == R.id.action_githubAudio) {
             ChromeTabs chromeTabs = new ChromeTabs();
             chromeTabs.gotoGithubProfile(this, "https://github.audio");
-        } else if (id == R.id.sortbyFollowers) {
-            sortType = "followers";
-            GetLagosJavaDevs(currentPageNo, sortType);
+        }
+//        else if (id == R.id.sortbyFollowers) {
+//            sortType = "followers";
+//            GetLagosJavaDevs(currentPageNo, sortType);
+//
+//        } else if (id == R.id.sortbyRepositories) {
+//
+//            sortType = "repositories";
+//            GetLagosJavaDevs(currentPageNo, sortType);
+//
+//        }
+        else if (id == R.id.action_filter) {
 
-        } else if (id == R.id.sortbyRepositories) {
+            ViewDialog alert = new ViewDialog();
+            alert.showDialog(this, "Error de conexión al servidor");
 
-            sortType = "repositories";
-            GetLagosJavaDevs(currentPageNo, sortType);
 
         }
 
@@ -336,4 +364,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        UtilsClass utils = new UtilsClass(this);
+        boolean isFilterChanged = utils.getFilterStatus();
+
+        if(isFilterChanged){
+
+
+            utils.storeFilterChange(false);
+
+
+
+        }
+    }
 }

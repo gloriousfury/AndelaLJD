@@ -20,21 +20,22 @@
 
 
     <item
+        android:id="@+id/action_filter"
         android:title="sort"
         android:icon="@drawable/ic_sort_white_24dp"
         app:showAsAction="always">
-        <menu>
+        <!--<menu>-->
 
-            <item
-                android:id="@+id/sortbyRepositories"
-                android:title="Sort by Repos" />
+            <!--<item-->
+                <!--android:id="@+id/sortbyRepositories"-->
+                <!--android:title="Sort by Repos" />-->
 
-            <item
-                android:id="@+id/sortbyFollowers"
-                android:title="Sort by Followers" />
+            <!--<item-->
+                <!--android:id="@+id/sortbyFollowers"-->
+                <!--android:title="Sort by Followers" />-->
 
 
-        </menu>
+        <!--</menu>-->
     </item>
 
 

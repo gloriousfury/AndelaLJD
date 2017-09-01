@@ -14,6 +14,7 @@ import com.alc.ljv.constants.IntentActionConstants;
 import com.alc.ljv.constants.ServiceActionConstants;
 import com.alc.ljv.model.DataModel;
 import com.alc.ljv.model.SingleUserModel;
+import com.alc.ljv.utility.UtilsClass;
 
 import org.greenrobot.eventbus.EventBus;
 import org.parceler.Parcels;
@@ -36,9 +37,7 @@ public class AppMainService extends BaseService {
 
     String SORT_TYPE = "sort_type";
     String at = Html.escapeHtml("@");
-    int currentPageNo =1;
-
-
+    int currentPageNo = 1;
 
 
     public AppMainService() {
@@ -63,14 +62,12 @@ public class AppMainService extends BaseService {
                 try {
 
                     String sort_type = intent.getStringExtra(SORT_TYPE);
-                    int pageNo = intent.getIntExtra(PAGE_NO,0);
-                    loadAnswers(pageNo,sort_type);
+                    int pageNo = intent.getIntExtra(PAGE_NO, 0);
+                    loadAnswers(pageNo, sort_type);
                     Log.i("message", "Started looking for LJVs");
 
 
-
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
                     Log.i("error", "unknown error");
                     event.setEventType(AppMainServiceEvent.GITHUB_USERS_RESPONSE);
                     EventBus.getDefault().post(event);
@@ -83,13 +80,12 @@ public class AppMainService extends BaseService {
             case ServiceActionConstants.SERVICE_ACTION_GET_JAVA_DEV_DETAILS:
                 try {
 
-                   String developerName = intent.getStringExtra(DEV_NAME);
+                    String developerName = intent.getStringExtra(DEV_NAME);
 
                     getDevDetails(developerName);
                     Log.i("message", "Started getting Developer Details");
 
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
                     Log.i("error", "unknown error");
                     event.setEventType(AppMainServiceEvent.GITHUB_SINGLE_USER_RESPONSE);
                     EventBus.getDefault().post(event);
@@ -104,9 +100,27 @@ public class AppMainService extends BaseService {
 
     }
 
-    public void loadAnswers(int page_no,String sort_type) {
+    public void loadAnswers(int page_no, String sort_type) {
 
-     String url =    "/search/users?q=type:user+language:java+location:lagos&page=" + page_no + "&per_page=20&sort="+sort_type;
+        UtilsClass utils = new UtilsClass(this);
+        String location = utils.getLocation().toLowerCase();
+        String language = utils.getLanguage().toLowerCase();
+        String sorting_parameter = utils.getSort().toLowerCase();
+        String url;
+
+
+        if (location != null && language != null) {
+            url = "/search/users?q=type:user" + "+language:"+ language+"+location:" +
+                    location  +
+                    "&page=" + page_no
+                    + "&per_page=20&sort=" + sorting_parameter;
+//            Toast.makeText(getContext(),location+  "  " + language + "  " + sorting_parameter,Toast.LENGTH_LONG).show();
+        }else{
+
+            url = "/search/users?q=location:nigeria";
+            Toast.makeText(this, "I came to the  null part",Toast.LENGTH_LONG).show();
+
+        }
         mService.getJavaDevs1(url).enqueue(new Callback<DataModel>() {
             @Override
             public void onResponse(Call<DataModel> call, Response<DataModel> response) {
@@ -132,7 +146,7 @@ public class AppMainService extends BaseService {
 
             @Override
             public void onFailure(Call<DataModel> call, Throwable t) {
-    //                showErrorMessage();
+                //                showErrorMessage();
                 t.getMessage();
                 DataModel data = null;
                 responseIntent.putExtra(AppMainServiceEvent.RESPONSE_DATA, Parcels.wrap(data));
@@ -141,7 +155,6 @@ public class AppMainService extends BaseService {
                 Log.d("MainActivity connec", t.toString());
                 event.setEventType(AppMainServiceEvent.GITHUB_USERS_RESPONSE);
                 EventBus.getDefault().post(event);
-
 
 
             }

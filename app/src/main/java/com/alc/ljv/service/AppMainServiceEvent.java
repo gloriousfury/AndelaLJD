@@ -7,7 +7,7 @@ public class AppMainServiceEvent {
 
     public static final int GITHUB_USERS_RESPONSE = 1101;
     public static final int GITHUB_SINGLE_USER_RESPONSE = 1102;
-
+    public static final int FILTER_PARAMETERS_CHANGED = 1103;
 
     public static String RESPONSE_DATA = "response_data";
     public static String RESPONSE_MESSAGE = "response_message";

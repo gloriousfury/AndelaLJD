@@ -7,6 +7,7 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 
+import retrofit2.http.Query;
 import retrofit2.http.Url;
 
 public interface ApiInterface {
@@ -17,7 +18,7 @@ public interface ApiInterface {
     @GET
     Call<DataModel> getJavaDevs1(@Url String url);
 
-    //   Call<DataModel> getJavaDevs(@Path("location") String Location);
+       Call<DataModel> getJavaDevs(@Path("location") String Location, @Query("api_key") String api_key);
     @GET("/users/{developerName}")
     Call<SingleUserModel> getJavaDevDetails(@Path("developerName") String devName);
 
